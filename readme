@@ -1,6 +1,6 @@
-# 💻 Code Assistant  
+# 💻 Gemini Code Assistant - React Version
 
-A simple web app that uses the **Google Gemini API** to **explain**, **debug**, or **refactor** code snippets right in your browser.  
+A modern React application that uses the **Google Gemini API** to **explain**, **debug**, or **refactor** code snippets right in your browser.  
 
 ---
 
@@ -9,23 +9,119 @@ A simple web app that uses the **Google Gemini API** to **explain**, **debug**, 
 - 📝 **Explain code step-by-step**  
 - 🐞 **Find and fix bugs automatically**  
 - 🔧 **Suggest modern refactoring**  
-- 🎨 **Beautiful Markdown rendering** of Gemini’s output  
+- 🎨 **Beautiful Markdown rendering** of Gemini's output  
 - ⏳ **Built-in retry logic** for API rate limits  
+- ⚛️ **Modern React architecture** with component-based design
+- 🎨 **Tailwind CSS** for beautiful, responsive UI
+- 🔐 **Environment variable** support for secure API key management
 
 ---
 
 ## 🛠️ Setup  
+
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm or yarn package manager
+
+### Installation
 
 1. **Clone this repository**  
 
 ```bash
 git clone https://github.com/your-username/gemini-code-assistant.git
 cd gemini-code-assistant
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Configure your API key**
+
+Create a `.env` file in the root directory:
+
+```bash
+cp env.example .env
+```
+
+Edit the `.env` file and replace `your_gemini_api_key_here` with your actual Gemini API key:
+
+```env
+REACT_APP_GEMINI_API_KEY=your_actual_gemini_api_key_here
+```
+
+**Get your API key from:** [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+4. **Start the development server**
+
+```bash
+npm start
+```
+
+The application will open in your browser at `http://localhost:3000`.
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `build` folder.
 
 ---
 
-##  Configure your API key
+## 🏗️ Project Structure
 
-Open script.js and replace:
+```
+src/
+├── components/
+│   ├── Header.js          # Application header
+│   ├── CodeInput.js       # Code input and controls
+│   └── OutputPanel.js     # Results display
+├── services/
+│   └── geminiService.js   # Gemini API integration
+├── utils/
+│   └── markdownRenderer.js # Markdown to HTML converter
+├── App.js                 # Main application component
+├── index.js              # React entry point
+└── index.css             # Global styles and Tailwind imports
+```
 
-const providedApiKey = "Enter Your Gemini API Key Here";
+---
+
+## 🔧 Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `REACT_APP_GEMINI_API_KEY` | Your Google Gemini API key | Yes |
+
+---
+
+## 🚀 Available Scripts
+
+- `npm start` - Runs the app in development mode
+- `npm run build` - Builds the app for production
+- `npm test` - Launches the test runner
+- `npm run eject` - Ejects from Create React App (one-way operation)
+
+---
+
+## 📝 Usage
+
+1. **Select a programming language** from the dropdown
+2. **Choose an analysis mode:**
+   - 📝 **Explain Code** - Get step-by-step code explanations
+   - 🐞 **Find & Fix Bug** - Identify and fix bugs automatically
+   - ✨ **Refactor/Improve** - Get modern refactoring suggestions
+3. **Paste your code** in the text area
+4. **Click "Analyze Code"** to get AI-powered analysis
+
+---
+
+## 🔒 Security Notes
+
+- Never commit your `.env` file to version control
+- The API key is only used client-side for this demo
+- For production applications, consider implementing server-side API calls
